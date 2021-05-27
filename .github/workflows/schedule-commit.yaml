@@ -32,6 +32,10 @@ jobs:
       - name: Install curl
         run: |
           sudo apt-get install libcurl4-openssl-dev
+          
+      - name: Install curl
+        run: |
+          R CMD javareconf
 
       - name: Query dependencies
         run: |

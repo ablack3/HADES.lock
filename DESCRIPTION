@@ -19,4 +19,5 @@ Imports:
     purrr,
     glue,
     remotes,
-    renv
+    renv,
+    rJava
