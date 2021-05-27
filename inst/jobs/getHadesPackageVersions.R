@@ -1,7 +1,8 @@
 library(httr)
 library(purrr)
 
-hadesPackages <- c("Andromeda","BigKnn","CirceR","CohortDiagnostics","CohortMethod","Cyclops","DatabaseConnector","EmpiricalCalibration","Eunomia","EvidenceSynthesis","FeatureExtraction","Hydra","MethodEvaluation","OhdsiSharing","ParallelLogger","PatientLevelPrediction","ROhdsiWebApi","SelfControlledCaseSeries","SelfControlledCohort","SqlRender")
+# order matters here
+hadesPackages <- c("Andromeda","SqlRender", "DatabaseConnector", "BigKnn","CirceR","CohortDiagnostics","CohortMethod","Cyclops","EmpiricalCalibration","Eunomia","EvidenceSynthesis","FeatureExtraction","Hydra","MethodEvaluation","OhdsiSharing","ParallelLogger","PatientLevelPrediction","ROhdsiWebApi","SelfControlledCaseSeries","SelfControlledCohort")
 
 getHadesPackageVersion <- function(packageName){
   r <- httr::GET(glue::glue("https://api.github.com/repos/OHDSI/{packageName}/tags"))
