@@ -29,11 +29,13 @@ write.csv(df,
 library(renv)
 library(remotes)
 renv::init()
-purrr::walk2(df$package, df$version, 
-             ~install_github(glue::glue("OHDSI/{.x}"),
-                                      ref = .y,
-                                      dependencies = TRUE, 
-                                      upgrade = "always"))
+remotes::install_github("OHDSI/Hades", dependencies = TRUE, upgrade = "always")
+
+# purrr::walk2(df$package, df$version, 
+#              ~install_github(glue::glue("OHDSI/{.x}"),
+#                                       ref = .y,
+#                                       dependencies = TRUE, 
+#                                       upgrade = "always"))
 renv::snapshot()
 
 file.copy("renv.lock", "./inst/lockfiles/{Sys.Date()}-HADES-renv.lock")
