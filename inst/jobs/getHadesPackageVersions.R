@@ -18,7 +18,9 @@ df <- data.frame(package = hadesPackages, version = hadesPackageVersions)
 # read latest version file
 # sort(list.files("versions"))[[1]]
 
+print(getwd())
+
 write.csv(df, 
-          file.path("inst", "versions", glue::glue("{Sys.Date()}-hadesPackageVersions.csv")),
+          glue::glue("./inst/versions/{Sys.Date()}-hadesPackageVersions.csv"),
           row.names = FALSE)
 
