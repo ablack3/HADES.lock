@@ -3,7 +3,7 @@ on:
     branches: [ main ]
 
 jobs:
-  generate-data:
+  generate-lockfile:
     runs-on: ${{ matrix.config.os }}
 
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
@@ -28,6 +28,10 @@ jobs:
           http-user-agent: ${{ matrix.config.http-user-agent }}
 
       - uses: r-lib/actions/setup-pandoc@master
+      
+      - name: Install curl
+        run: |
+          sudo apt-get install libcurl4-openssl-dev
 
       - name: Query dependencies
         run: |
