@@ -1,3 +1,5 @@
+library(httr)
+library(purrr)
 
 hadesPackages <- c("Andromeda","BigKnn","CirceR","CohortDiagnostics","CohortMethod","Cyclops","DatabaseConnector","EmpiricalCalibration","Eunomia","EvidenceSynthesis","FeatureExtraction","Hydra","MethodEvaluation","OhdsiSharing","ParallelLogger","PatientLevelPrediction","ROhdsiWebApi","SelfControlledCaseSeries","SelfControlledCohort","SqlRender")
 
