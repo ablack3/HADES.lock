@@ -1,2 +1,4 @@
+^renv$
+^renv\.lock$
 ^HADES\.lock\.Rproj$
 ^\.Rproj\.user$
