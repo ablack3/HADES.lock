@@ -22,9 +22,9 @@ library(rJava)
 
 print(getwd())
 
-write.csv(df, 
-          glue::glue("./inst/versions/{Sys.Date()}-hadesPackageVersions.csv"),
-          row.names = FALSE)
+# write.csv(df, 
+#           glue::glue("./inst/versions/{Sys.Date()}-hadesPackageVersions.csv"),
+#           row.names = FALSE)
 
 
 # library(renv)
