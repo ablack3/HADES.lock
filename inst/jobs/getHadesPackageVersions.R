@@ -33,6 +33,5 @@ remotes::install_github("OHDSI/Hades", dependencies = TRUE, upgrade = "always", 
 #                                       upgrade = "always"))
 renv::snapshot(prompt = FALSE, type = "all")
 
-file.copy("renv.lock", glue::glue("./inst/lockfiles/{Sys.Date()}-HADES-renv.lock"))
+file.copy("renv.lock", glue::glue("./inst/lockfiles/{Sys.time()}-HADES-renv.lock"))
 
-renv::deactivate()
