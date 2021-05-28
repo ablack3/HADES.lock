@@ -23,9 +23,6 @@ write.csv(df,
           glue::glue("./inst/versions/{Sys.Date()}-hadesPackageVersions.csv"),
           row.names = FALSE)
 
-
-library(renv)
-library(remotes)
 renv::init()
 remotes::install_github("OHDSI/Hades", dependencies = TRUE, upgrade = "always", quiet = TRUE)
 
