@@ -1,4 +1,4 @@
-
+renv::deactivate()
 # order matters here
 hadesPackages <- c("Andromeda","SqlRender", "DatabaseConnector", "BigKnn","CirceR","CohortDiagnostics","CohortMethod","Cyclops","EmpiricalCalibration","Eunomia","EvidenceSynthesis","FeatureExtraction","Hydra","MethodEvaluation","OhdsiSharing","ParallelLogger","PatientLevelPrediction","ROhdsiWebApi","SelfControlledCaseSeries","SelfControlledCohort")
 
@@ -35,4 +35,4 @@ renv::snapshot()
 
 file.copy("renv.lock", glue::glue("./inst/lockfiles/{Sys.Date()}-HADES-renv.lock"))
 
-
+renv::deactivate()
