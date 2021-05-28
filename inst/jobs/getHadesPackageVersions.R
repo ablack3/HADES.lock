@@ -1,5 +1,3 @@
-library(httr)
-library(purrr)
 
 # order matters here
 hadesPackages <- c("Andromeda","SqlRender", "DatabaseConnector", "BigKnn","CirceR","CohortDiagnostics","CohortMethod","Cyclops","EmpiricalCalibration","Eunomia","EvidenceSynthesis","FeatureExtraction","Hydra","MethodEvaluation","OhdsiSharing","ParallelLogger","PatientLevelPrediction","ROhdsiWebApi","SelfControlledCaseSeries","SelfControlledCohort")
@@ -29,15 +27,15 @@ write.csv(df,
 library(renv)
 library(remotes)
 renv::init()
-remotes::install_github("OHDSI/Hades", dependencies = TRUE, upgrade = "always")
+remotes::install_github("OHDSI/Hades", dependencies = TRUE, upgrade = "always", quiet = TRUE)
 
 # purrr::walk2(df$package, df$version, 
 #              ~install_github(glue::glue("OHDSI/{.x}"),
 #                                       ref = .y,
 #                                       dependencies = TRUE, 
 #                                       upgrade = "always"))
-# renv::snapshot()
+renv::snapshot()
 
-file.copy("renv.lock", "./inst/lockfiles/{Sys.Date()}-HADES-renv.lock")
+file.copy("renv.lock", glue::glue("./inst/lockfiles/{Sys.Date()}-HADES-renv.lock"))
 
 

@@ -1,3 +1,5 @@
+name: create-HADES-rev.lock
+
 on:
   push:
     branches: [ main ]
@@ -33,7 +35,7 @@ jobs:
         run: |
           sudo apt-get install libcurl4-openssl-dev
           
-      - name: Install curl
+      - name: Run javareconf
         run: |
           sudo R CMD javareconf
 
@@ -57,7 +59,7 @@ jobs:
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
           
-      - name: Generate data
+      - name: Generate lockfile
         run: |
           source("inst/jobs/getHadesPackageVersions.R")
         shell: Rscript {0} 
